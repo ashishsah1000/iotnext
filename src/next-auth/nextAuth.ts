@@ -2,7 +2,6 @@ import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import AzureADProvider from "next-auth/providers/azure-ad";
 import { AuthOptions } from "next-auth";
-
 import { getProviders } from "next-auth/react";
 import { getServerSession } from "next-auth/next";
 import type { GetServerSidePropsContext } from "next";
