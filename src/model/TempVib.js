@@ -2,33 +2,24 @@
 import mongoose from "mongoose";
 
 // Define the equipment schema
-const equipmentSchema = new mongoose.Schema({
+const tempVibSchema = new mongoose.Schema({
   dateCreated: {
     type: Date,
     default: Date.now, // Sets the default value to the current timestamp
   },
-  name: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  createdBy: {
+  secretKey: {
     type: String,
     required: true,
   },
-  description: {
+  vib: {
     type: String,
     required: true,
   },
-  publicKey: {
-    type: String,
-    required: true,
-  },
-  privateKey: {
+  temp: {
     type: String,
     required: true,
   },
 });
 
-export default mongoose.models.Equipment ||
-  mongoose.model("Equipment", equipmentSchema);
+export default mongoose.models.TempVibs ||
+  mongoose.model("TempVibs", tempVibSchema);

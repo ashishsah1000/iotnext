@@ -3,13 +3,18 @@ import { TextInput } from "@tremor/react";
 import { SearchIcon } from "@heroicons/react/solid";
 import { useState } from "react";
 import { validateString } from "@/helpers/validate";
+import { createNewEquipment } from "@/axios/equipment";
 
 export default function AddDevice() {
   const [error, seterror] = useState("");
   const [inputText, setInputText] = useState("");
-  const handleInputChange = (e: any) => {
-    const value = e.target.value;
-    seterror(validateString(value));
+  const [detatilsText, setdetatilsText] = useState("");
+  const handleSubmit = async () => {
+    if (inputText.length > 0 && detatilsText.length > 0) {
+      console.log("sending request", { inputText, detatilsText });
+      const res = await createNewEquipment(inputText, detatilsText);
+      console.log("equipment created response", res);
+    }
   };
   return (
     <Card
@@ -18,10 +23,16 @@ export default function AddDevice() {
       decorationColor="indigo"
     >
       <Text>Add a new device</Text>
-      <Metric>0 / 6</Metric>
+
+      <TextInput
+        placeholder="Name of equipment"
+        className="my-2 outline-none"
+        onChange={(e) => setInputText(e.target.value)}
+      />
       <TextInput
         className="my-2 outline-none"
-        onChange={(e) => handleInputChange(e)}
+        placeholder="Details of equipment"
+        onChange={(e) => setdetatilsText(e.target.value)}
       />
 
       {error.length > 0 ? (
@@ -29,7 +40,12 @@ export default function AddDevice() {
       ) : (
         <></>
       )}
-      <Button className="mt-4">Create a Device</Button>
+      <div className="flex gap-2 items-center">
+        <Button className="mt-4" onClick={() => handleSubmit()}>
+          Create a Device
+        </Button>
+        <Metric>0 / 6</Metric>
+      </div>
     </Card>
   );
 }

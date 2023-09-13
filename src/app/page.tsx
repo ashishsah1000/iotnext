@@ -10,6 +10,10 @@ export default function Home() {
   console.log(session);
 
   if (session.data) {
+    // const res =
+  }
+
+  if (session.data) {
     return (
       <>
         <div className="w-[80vw] mx-auto mt-24">
