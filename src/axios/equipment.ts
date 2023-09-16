@@ -1,5 +1,7 @@
 import axios from "axios";
-export const url = "http://localhost:3000";
+//export const url = "http://localhost:3000";
+export const url = "https://iotnext-psi.vercel.app";
+
 
 // create a equipment
 export const createNewEquipment = (name: string, description: string) => {
