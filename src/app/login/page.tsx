@@ -40,12 +40,11 @@ const Login = () => {
         />
         {/* <h2 className="text-2xl mb-4">Login with GitHub</h2> */}
         <p className="text-xs text-gray-400 font-bold text-justify mt-4">
-          Finding the most relevant research papers has never been easier. Our
-          powerful search engine enables you to explore a comprehensive database
-          of academic publications, covering various disciplines and topics.
-          Whether you're a student, researcher, or professional, AppRender
-          caters to your specific needs, providing you with a wealth of
-          knowledge at your fingertips.
+          How It Works: 
+MPU6050 Sensor: Captures precise vibration data for in-depth analysis.
+Arduino Uno: Processes sensor data and transmits it to the Next.js dashboard.
+Next.js Dashboard: Delivers an intuitive and responsive interface for monitoring live data.
+MongoDB Database: Safely stores historical data for trend analysis and future insights.
         </p>
         {/* <button
           className="flex  gap-2 items-center justify-center bg-sky-950 text-white rounded px-4 py-2 mx-auto mt-4"
